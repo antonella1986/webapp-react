@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import DefaultLayout from './layouts/DefaultLayout'
 import HomePage from './pages/HomePage'
-import MovieDetail from './components/MovieDetail'
+import MovieDetail from './pages/MovieDetail'
 
 import './App.css'
 
