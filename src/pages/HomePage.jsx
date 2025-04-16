@@ -36,7 +36,7 @@ export default function HomePage() {
                         <div className="col-md-4 mb-4" key={movie.id}>
                                 <div className="card h-100">
                                     <img 
-                                        src={`http://localhost:3000/images/${movie?.image}`} 
+                                        src={`http://localhost:3000/img/${movie.image}`} 
                                         alt={movie.title} 
                                         className="card-img-top" 
                                     />
