@@ -1,6 +1,18 @@
 @import 'bootstrap';
 @import 'bootstrap-icons';
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #1A1A1A;
+  color: beige;
+}
+
+.navbar {
+  background-color: #1A1A1A;
+}
+
 .movies {
   .card {
     img {
@@ -14,6 +26,10 @@ li {
   list-style: none;
 }
 
-/* body {
-  background-color: rgb(17, 17, 37);
-} */
+.custom-shadow {
+  box-shadow: 2px 6px 8px rgba(0, 0, 0, 0.587); /* Ombra leggera */
+}
+
+.card-title {
+  color: beige;
+}

@@ -6,7 +6,7 @@ export default function Header() {
     return (
         <>
             <nav
-                className="navbar navbar-expand-sm navbar-light bg-light"
+                className="navbar navbar-expand-sm navbar-dark"
             >
                 <div className="container">
                     <a className="navbar-brand" href="#"><strong>Movies' reviews</strong></a>
