@@ -16,6 +16,19 @@ export default function MovieDetail() {
         });
     }, []);
 
+    function printRating(vote) {
+        const stars = [];
+        const empty = [];
+
+        for (let i = 0; i < vote; i++) {
+            stars.push(<i key={i} className="bi bi-star-fill"></i>);
+        }
+        for (let i = 0; i < 5 - vote; i++) {
+            empty.push(<i key={i} className="bi bi-star"></i>);
+        }
+        return stars;
+    }
+
     return (
         <>
         <div className="container">
@@ -38,7 +51,7 @@ export default function MovieDetail() {
                         <div className="card-body">
                             <h4 className="card-title">{review.name}</h4>
                             <p className="card-text">{review.text}</p>
-                            <p className="card-text"><strong>Vote: </strong>{review.vote}</p>
+                            <p className="card-text"><strong>Vote: </strong> {printRating(review.vote)}</p>
                         </div>
                     </div>
                 ))
