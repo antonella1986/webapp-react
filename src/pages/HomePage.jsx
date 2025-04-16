@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function HomePage() {
 
@@ -33,20 +34,20 @@ export default function HomePage() {
                 <div className="row">
                     {movies.map((movie) => (
                         <div className="col-md-4 mb-4" key={movie.id}>
-                            <div className="card h-100">
-                                <img 
-                                    src={`http://localhost:3000/images/${movie?.image}`} 
-                                    alt={movie.title} 
-                                    className="card-img-top" 
-                                />
-                                <div className="card-body">
-                                    <h5 className="card-title">{movie.title}</h5>
-                                    <p className="card-text">{movie.abstract}</p>
-                                    <a href={`/movies/${movie.id}`} className="btn btn-primary">
-                                        View Details
-                                    </a>
+                                <div className="card h-100">
+                                    <img 
+                                        src={`http://localhost:3000/images/${movie?.image}`} 
+                                        alt={movie.title} 
+                                        className="card-img-top" 
+                                    />
+                                    <div className="card-body">
+                                        <h5 className="card-title">{movie.title}</h5>
+                                        <p className="card-text">{movie.abstract}</p>
+                                        <Link to={`/movies/${movie.id}`} className="btn btn-primary">
+                                                View Details
+                                        </Link>
+                                    </div>
                                 </div>
-                            </div>
                         </div>
                     ))}
                 </div>

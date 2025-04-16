@@ -17,8 +17,8 @@ export default function MovieDetail() {
     return (
         <>
             <h1>{movie.title}</h1>
+            <p>Description: {movie.abstract}</p>
             <p>Year: {movie.year}</p>
-            <p>Description: {movie.description}</p>
         </>
     )
 }
