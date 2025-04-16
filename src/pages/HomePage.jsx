@@ -19,7 +19,7 @@ export default function HomePage() {
             <ul>
                 {movies.map((movie) => (
                     <li key={movie.id}>
-                        {movie.title} ({movie.year})
+                        {movie.title} ({movie.abstract})
                     </li>
                 ))}
             </ul>
