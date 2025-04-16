@@ -15,14 +15,42 @@ export default function HomePage() {
 
     return (
         <>
-            <h1>Home page</h1>
-            <ul>
-                {movies.map((movie) => (
-                    <li key={movie.id}>
-                        {movie.title} ({movie.abstract})
-                    </li>
-                ))}
-            </ul>
+            <div className="p-5 mb-4 bg-light rounded-3">
+                <div className="container-fluid py-5">
+                    <h1 className="display-5 fw-bold">Custom jumbotron</h1>
+                    <p className="col-md-8 fs-4">
+                        Using a series of utilities, you can create this jumbotron, just
+                        like the one in previous versions of Bootstrap. Check out the
+                        examples below for how you can remix and restyle it to your liking.
+                    </p>
+                    <button className="btn btn-primary btn-lg" type="button">
+                        Example button
+                    </button>
+                </div>
+            </div>
+
+            <div className="container">
+                <div className="row">
+                    {movies.map((movie) => (
+                        <div className="col-md-4 mb-4" key={movie.id}>
+                            <div className="card h-100">
+                                <img 
+                                    src={`http://localhost:3000/images/${movie?.image}`} 
+                                    alt={movie.title} 
+                                    className="card-img-top" 
+                                />
+                                <div className="card-body">
+                                    <h5 className="card-title">{movie.title}</h5>
+                                    <p className="card-text">{movie.abstract}</p>
+                                    <a href={`/movies/${movie.id}`} className="btn btn-primary">
+                                        View Details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
 
         </>
     )
