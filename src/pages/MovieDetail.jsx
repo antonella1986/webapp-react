@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import Form from '../components/Form';
 
 export default function MovieDetail() {
     const { id } = useParams();
@@ -37,7 +38,7 @@ export default function MovieDetail() {
                     src={`http://localhost:3000/img/${movie.image}`} 
                     alt={movie.title} 
                     className="card-img-top mb-5 mt-5 custom-shadow"
-                    style={{ height: "550px", objectFit: "cover", width: "30%" }} 
+                    style={{ height: "550px", objectFit: "cover", width: "40%" }} 
                 />
             </div>
             <h1>{movie.title}</h1>
@@ -58,6 +59,8 @@ export default function MovieDetail() {
             ) : (
                 <p>No reviews available for this movie.</p>
             )}
+
+            <Form />
         </div>
         </>
     )

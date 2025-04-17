@@ -16,7 +16,7 @@ export default function HomePage() {
 
     return (
         <>
-            <div className="p-5 mb-4 bg-dark">
+            <div className="p-5 mb-4">
                 <div className="container-fluid py-5">
                     <h1 className="display-5 fw-bold">Welcome, mate!</h1>
                     <p className="col-md-8 fs-4">
