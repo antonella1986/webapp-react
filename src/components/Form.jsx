@@ -1,11 +1,15 @@
 export default function Form() {
 
+    function handleSubmit(e) {
+        e.preventDefault();
+    }
+
     return (
 
         <>
             <hr className="mt-5" />
             <h2 className="mt-5 mb-4">Add your review</h2>
-            <form className="row g-3">
+            <form onSubmit={handleSubmit} className="row g-3">
                 <div className="col-md-12">
                     <label htmlFor="inputUsername" className="form-label">Username</label>
                     <input type="text" className="form-control" id="inputUsername" />
