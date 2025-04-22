@@ -6,14 +6,14 @@ import Form from '../components/Form';
 export default function MovieDetail() {
     //recupero l'id del film tramite la funzione useParams
     const { id } = useParams();
-    const { setIsLoading } = useContext(GlobalContext);
+    const { startLoading, stopLoading } = useContext(GlobalContext);
     //recupero le informazioni dei film e delle recensioni già presenti
     //con ([]) mi aspetto un array, una lista di cose (l'elenco dei film). con ({}) mi aspetto un singolo oggetto ( e quindi i dettagli del singolo film)
     const [movie, setMovie] = useState({})
     const [reviews, setReviews] = useState({});
 
     useEffect(() => {
-        setIsLoading(true);
+        startLoading();
         fetch(`http://localhost:3000/movies/${id}`)
         .then(res => res.json())
         .then((data) => {
@@ -22,10 +22,10 @@ export default function MovieDetail() {
             setMovie(data)
             //se un film non ha recensioni, non ricevo undefined, ma un array vuoto, così non si rompe il map() nel render
             setReviews(data.reviews || []);
-            setIsLoading(false);
+            stopLoading(false);
         });
     //mi serve che i dati vengano caricati solo una volta, ovvero al caricamento della pagina
-    }, [id, setIsLoading]);
+    }, [id, startLoading, stopLoading]);
 
     function printRating(vote) {
         const stars = [];
