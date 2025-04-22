@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 const GlobalContext = createContext();
 
 const GlobalProvider = ({ children }) => {
-    const [isLoading, setIsLoading] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     return (
         //dai a tutti i figli isLoading, in modo che possano usarlo
