@@ -22,7 +22,7 @@ export default function MovieDetail() {
             setMovie(data)
             //se un film non ha recensioni, non ricevo undefined, ma un array vuoto, così non si rompe il map() nel render
             setReviews(data.reviews || []);
-            stopLoading(false);
+            stopLoading();
         });
     //mi serve che i dati vengano caricati solo una volta, ovvero al caricamento della pagina
     }, [id, startLoading, stopLoading]);

@@ -5,9 +5,14 @@ const GlobalContext = createContext();
 const GlobalProvider = ({ children }) => {
     //isLoading è true perché all'inizio la pagina sta caricando
     const [isLoading, setIsLoading] = useState(true);
-
-    const startLoading = () => setIsLoading(true);
-    const stopLoading = () => setIsLoading(false);
+    //il loading inizia (true) quando la pagina viene caricata
+    function startLoading() {
+        setIsLoading(true);
+    }
+    //il loading termina (false) quando la pagina è stata caricata
+    function stopLoading() {
+        setIsLoading(false);
+    }
 
     return (
         //dai a tutti i figli isLoading, in modo che possano usarlo
