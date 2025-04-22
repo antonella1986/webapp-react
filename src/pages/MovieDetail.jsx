@@ -8,11 +8,12 @@ export default function MovieDetail() {
     const { id } = useParams();
     const { startLoading, stopLoading } = useContext(GlobalContext);
     //recupero le informazioni dei film e delle recensioni già presenti
-    //con ([]) mi aspetto un array, una lista di cose (l'elenco dei film). con ({}) mi aspetto un singolo oggetto ( e quindi i dettagli del singolo film)
+    //con ([]) mi aspetto un array, una lista di cose (l'elenco dei film). con ({}) mi aspetto un singolo oggetto (e quindi i dettagli del singolo film)
     const [movie, setMovie] = useState({})
     const [reviews, setReviews] = useState({});
 
     useEffect(() => {
+        //mostro il loader
         startLoading();
         fetch(`http://localhost:3000/movies/${id}`)
         .then(res => res.json())
@@ -22,9 +23,10 @@ export default function MovieDetail() {
             setMovie(data)
             //se un film non ha recensioni, non ricevo undefined, ma un array vuoto, così non si rompe il map() nel render
             setReviews(data.reviews || []);
+            //nascondo il loader
             stopLoading();
         });
-    //mi serve che i dati vengano caricati solo una volta, ovvero al caricamento della pagina
+    //mi serve che i dati vengano caricati quando l'id cambia
     }, [id, startLoading, stopLoading]);
 
     function printRating(vote) {
