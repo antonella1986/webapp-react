@@ -50,6 +50,7 @@ export default function Form() {
                         type="text"
                         className="form-control"
                         id="inputUsername"
+                        name='name'
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                     />
@@ -60,6 +61,7 @@ export default function Form() {
                         type="text"
                         className="form-control"
                         id="inputUsername"
+                        name='text'
                         value={text}
                         onChange={(e) => setText(e.target.value)}
                     />
@@ -69,6 +71,7 @@ export default function Form() {
                     <select
                         id="inputVote"
                         className="form-select"
+                        name='vote'
                         value={vote}
                         onChange={(e) => setVote(e.target.value)}
                     >
