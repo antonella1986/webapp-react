@@ -5,7 +5,7 @@ import GlobalContext from "../contexts/GlobalContext";
 export default function HomePage() {
 
     const [movies, setMovies] = useState([]);
-    const { startLoading, StopLoading } = useContext(GlobalContext);
+    const { startLoading, stopLoading } = useContext(GlobalContext);
 
     useEffect(() => {
         startLoading();
